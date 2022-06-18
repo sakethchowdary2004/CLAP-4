@@ -1,0 +1,27 @@
+include<stdio.h>
+#include<conio.h>
+
+main()
+{
+    FILE      *fp1,*fp2;
+    char      ch,fname1[10],fname2[20];
+     clrscr();
+ printf("\n Enter a Source File name : ");
+scanf("%s",&fname1);
+printf("\n Enter target file name : ");
+scanf("%s",&fname2);
+fp1=fopen(fname1,"r");
+fp2=fopen(fname2,'w');
+while((ch=fgetc(fp1))!=EOF)
+{
+    fputc(ch,fp2);
+   }
+fclose(fp1);
+fclose(fp2);
+fp2=fopen(fname2,"r");
+while((ch=fgetc(fp2))!=EOF)
+{
+      putchar(ch);
+   }
+fclose(fp2);
+}
